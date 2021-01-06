@@ -1,0 +1,7 @@
+{% extends "products/base.html" %}
+{% block body %}
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+<h3>Are you sure want to delete this item ?</h3>>
+<input class="btn btn-danger" type="submit" value="Delete">
+</form>
+{% endblock %}

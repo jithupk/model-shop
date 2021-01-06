@@ -1,0 +1,21 @@
+{% extends "products/base.html" %}
+{% block body %}
+<div class="container-fluid">
+  <div class="row">
+    {% for item in additem %}
+    <div class="col md-6">
+      <div class="card" style="width: 250px;height: 250px;border-color: lightblue; margin-top: 40px;">
+        <img class="card-img-top" src="{{item.image.url}}" alt="Card image cap" style="width: 200px;height: 200px;">
+        <div class="card-body">
+          <a href="{% url 'detail' item.id %}">
+            <h4 class="card-text"> {{item.name}}</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

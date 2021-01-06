@@ -1,0 +1,17 @@
+{% extends "products/base.html" %}
+{% block body %}
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">{{item.offer}}
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <a href="#" class="btn btn-primary">{{product.price}}</a>
+    </div>
+  </div>
+  <div>
+    <a class="btn btn-success" href="{% url 'update' product.id %}">Update</a>
+    <a class="btn btn-danger" href="{% url 'delete' product.id %}">Delete</a>
+
+  </div>
+  {% endblock %}
+
