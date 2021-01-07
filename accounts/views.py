@@ -9,7 +9,7 @@ def login(request):
         Username = request.POST['username']
         Password = request.POST['password']
         user = auth.authenticate(username=Username, password=Password)
-        if User is None:
+        if user is not None:
             auth.login(request, user)
             return redirect('/')
         else:

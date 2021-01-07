@@ -4,14 +4,23 @@
   <div class="row">
     {% for item in additem %}
     <div class="col md-6">
-      <div class="card" style="width: 250px;height: 250px;border-color: lightblue; margin-top: 40px;">
-        <img class="card-img-top" src="{{item.image.url}}" alt="Card image cap" style="width: 200px;height: 200px;">
-        <div class="card-body">
-          <a href="{% url 'detail' item.id %}">
-            <h4 class="card-text"> {{item.name}}</h4>
-          </a>
+      <a href="{% url 'detail' item.id %}" style="text-decoration: none;">
+        <div class="card">
+          <div class="row">
+            <div class="col" style="size: 60%;">
+              <img class="card-img-fill" src="{{item.image.url}}" alt="Card image cap">
+            </div>
+            <div class="card-body">
+              <div class="col">
+                <h4 class="card-text"> {{item.name}}</h4>
+                <p>
+                  {{item.description}}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
     {% endfor %}
   </div>

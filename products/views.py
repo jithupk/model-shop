@@ -50,32 +50,4 @@ class ProductDeleteView(DeleteView):
     model = product_list
     template_name = 'products/delete.html'
     success_url = reverse_lazy('product')
-
-# def product(request):
-#     item = product_list.objects.all()
-#     return render(request, 'products/index.html', {'additem': item})
-
-
-    # def detail(request, product_id):
-#     product1 = product_list.objects.get(id=product_id)
-#     return render(request, "products/details.html", {'product': product1})
-
-
-# def update(request,id):
-#     product = product_list.objects.get(id=id)
-#     form = ModelForm(request.POST or None, request.FILES, instance=product)
-#     if form.is_valid():
-#          form.save()
-#          return redirect('/')
-#     return render(request, 'products/edit.html', {'product':product, 'form': form})
-
-
-# def delete(request,id):
-#     if request.method == 'POST':
-#         product = product_list.objects.get(id=id)
-#         product.delete()
-#         return redirect('/')
-#     return render(request, 'products/delete.html')
-
-
-
+    

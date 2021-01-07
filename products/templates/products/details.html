@@ -1,17 +1,45 @@
 {% extends "products/base.html" %}
 {% block body %}
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">{{item.offer}}
-    <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p class="card-text">{{product.description}}</p>
-      <a href="#" class="btn btn-primary">{{product.price}}</a>
+
+<div class="container" style="margin-top:1em;">
+  <div class="row">
+    <div class="col md-6 lg-6">
+      <img src="{{product.image.url}}" alt="" style="height: 28em; width: 32em;">
+      <div class="row">
+        <div class="col">
+          <a href="">
+            <button class="btn-detail btn-warning">Add to Cart</button>
+          </a>
+        </div>
+        <div class="col">
+          <a href="">
+            <button class="btn-detail btn-success">Buy now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col md-6 lg-1">
+
+      <div class="row">
+        <label class="product-name">
+         <h4>
+          {{product.name}}
+         </h4>
+        </label>
+      </div>
+      <div class="row">
+        <label class="product-price">
+         <h4>₹ {{product.price}}</h4> 
+        </label>
+      </div>
+
+      <div class="row">
+        <p>
+          {{product.description}}
+        </p>
+      </div>
     </div>
   </div>
-  <div>
-    <a class="btn btn-success" href="{% url 'update' product.id %}">Update</a>
-    <a class="btn btn-danger" href="{% url 'delete' product.id %}">Delete</a>
+</div>
 
-  </div>
-  {% endblock %}
-
+{% endblock %}
